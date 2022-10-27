@@ -1,0 +1,16 @@
+#include "opencv2/opencv.hpp"
+# include "CameraParams.h"
+# include "iostream"
+using namespace cv;
+int main()
+{
+
+	cv::Mat src = cv::imread("1.bmp", 1);
+	Mat imageEnhance;
+	Mat kernel = (Mat_<float>(3, 3) << 0, -1, 0, 0, 5, 0, 0, -1, 0);
+
+	cv::Mat t1;
+	equalizeHist(src, t1);
+
+	imshow("直方图均衡化", t1);
+}
